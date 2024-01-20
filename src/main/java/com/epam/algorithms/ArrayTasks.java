@@ -11,7 +11,7 @@ public class ArrayTasks {
      * Return a String[] array that will list all the seasons of the year, starting with winter.
      */
     public String[] seasonsArray() {
-        return null;
+        return new String[]{"Winter", "Spring", "Summer", "Autumn"};
     }
 
     /**
@@ -23,7 +23,11 @@ public class ArrayTasks {
      * length = 1  -> [1] length = 3  -> [1, 2, 3] length = 5  -> [1, 2, 3, 4, 5]
      */
     public int[] generateNumbers(int length) {
-        return null;
+        int[] numbers = new int[length];
+        for (int i = 0; i < numbers.length; i++) {
+            numbers[i] = i + 1;
+        }
+        return numbers;
     }
 
     /**
@@ -34,7 +38,11 @@ public class ArrayTasks {
      * arr = [1, 3, 5]   -> sum = 9 arr = [5, -3, -4] -> sum = -2
      */
     public int totalSum(int[] arr) {
-        return 0;
+        int result = 0;
+        for (int el : arr) {
+            result += el;
+        }
+        return result;
     }
 
     /**
@@ -46,7 +54,12 @@ public class ArrayTasks {
      * arr = [99, -7, 102], number = -7    ->   2 arr = [5, -3, -4],   number = 10    ->  -1
      */
     public int findIndexOfNumber(int[] arr, int number) {
-        return 0;
+        for (int i = 0; i < arr.length; i++) {
+            if (number == arr[i]) {
+                return i; // returns index (by counting from 0), not actual position (by counting from 1)
+            }
+        }
+        return -1;
     }
 
     /**
@@ -58,7 +71,12 @@ public class ArrayTasks {
      * "pineapple"]
      */
     public String[] reverseArray(String[] arr) {
-        return null;
+        for (int i = 0; i < arr.length / 2; i++) {
+            String temp = arr[i];
+            arr[i] = arr[arr.length - 1 - i];
+            arr[arr.length - 1 - i] = temp;
+        }
+        return arr;
     }
 
     /**
@@ -70,7 +88,20 @@ public class ArrayTasks {
      * arr = [1,-2, 3]      -> [1, 3] arr = [-1, -2, -3]   -> [] arr = [1, 2]         -> [1, 2]
      */
     public int[] getOnlyPositiveNumbers(int[] arr) {
-        return null;
+        int newSize = 0;
+        for(int i = 0; i < arr.length; i++){
+            if(arr[i] > 0){
+                newSize++;
+            }
+        }
+        int[] onlyPosArr = new int[newSize];
+        int index = 0;
+        for (int num : arr) {
+            if (num > 0) {
+                onlyPosArr[index++] = num;
+            }
+        }
+        return onlyPosArr;
     }
 
     /**
