@@ -3,10 +3,10 @@ package com.epam.langSyntax;
 public class NumberReverter {
 
     public void revert(int number) {
-        if(number > 999 || number < 100) {
+        /*if(number > 999 || number < 100) {
             System.out.println("Incorrect number format");
             return;
-        }
+        }*/
         int numBeginToEnd = number / 100;
         int numCenter = (number / 10) % 10;
         int numEndToBegin = number % 10;
